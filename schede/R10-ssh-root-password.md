@@ -70,5 +70,5 @@ passwordauthentication no
 - **Script e automazioni legacy:** strumenti di backup (es. `rsync`/`scp` via cron) o tool di deployment che usano `sshpass` o login diretto come `root` smetteranno di funzionare.
 
 ## Fonti
-* [CIS Distribution Independent Linux Benchmark - Ensure SSH root login is disabled](https://cisecurity.org)
-* [OpenSSH Manual - sshd_config(5)](https://openbsd.org)
+* [CIS Distribution Independent Linux Benchmark - Ensure SSH root login is disabled](https://www.cisecurity.org/cis-benchmarks)
+* [OpenSSH Manual - sshd_config(5)](https://man.openbsd.org/sshd_config)

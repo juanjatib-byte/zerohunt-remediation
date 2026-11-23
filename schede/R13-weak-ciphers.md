@@ -54,6 +54,6 @@ openssl s_client -connect <IP_TARGET>:443 -cipher '3DES:RC4:EXP'
 Client estremamente datati (es. Windows XP/Vista, vecchi dispositivi embedded o Java 6/7) che non supportano cifrari AEAD (`GCM` / `ChaCha20`).
 
 ## Fonti
-* [Mozilla SSL Configuration Generator](https://mozilla.org)
-* [RFC 7465 - Prohibiting RC4 Cipher Suites](https://ietf.org)
+* [Mozilla SSL Configuration Generator](https://ssl-config.mozilla.org/)
+* [RFC 7465 - Prohibiting RC4 Cipher Suites](https://datatracker.ietf.org/doc/html/rfc7465)
 * [CVE-2016-2183 - Sweet32](https://sweet32.info)

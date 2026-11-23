@@ -66,5 +66,5 @@ sshd -T | grep -E "kexalgorithms|ciphers|macs"
 Client SSH molto datati (es. vecchi switch/router di rete con firmware obsoleti, sistemi Linux/Unix legacy o vecchie librerie Paramiko/JSch non aggiornate) che non supportano `curve25519` o cifrari `GCM`/`ChaCha20` non riusciranno più a connettersi al server finché non verranno aggiornati o gestiti tramite un bastion host dedicato.
 
 ## Fonti
-* [Mozilla Infosec Guidelines - OpenSSH](https://mozilla.org)
-* [CIS Distribution Independent Linux Benchmark - SSH Server Configuration](https://cisecurity.org)
+* [Mozilla Infosec Guidelines - OpenSSH](https://infosec.mozilla.org/guidelines/openssh)
+* [CIS Distribution Independent Linux Benchmark - SSH Server Configuration](https://www.cisecurity.org/cis-benchmarks)
