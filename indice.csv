@@ -7,8 +7,8 @@ R05;WPAD / rilevamento automatico proxy attivo;Alta;Windows, Browser;no
 R06;IPv6 attivo ma non gestito (DHCPv6 / router advertisement non protetti);Media;Windows, Linux, Rete;no
 R07;RDP esposto senza NLA;Alta;Windows;no
 R08;Telnet attivo;Critica;Linux, Rete, Windows;si
-R09;SSH con algoritmi deboli (CBC, SHA-1, diffie-hellman-group1);Media;Linux, Rete;no
-R10;SSH con login root e password abilitati;Alta;Linux;no
+R09;SSH con algoritmi deboli (CBC, SHA-1, diffie-hellman-group1);Media;Linux, Rete;si
+R10;SSH con login root e password abilitati;Alta;Linux;si
 R11;SNMP v1/v2c con community predefinite (public, private);Alta;Rete, Linux, Windows;si
 R12;TLS 1.0 / 1.1 abilitati;Media;Web, Linux, Windows;si
 R13;Cifrari deboli (RC4, 3DES, export);Media;Web, Linux, Windows;no
