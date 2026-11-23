@@ -1,8 +1,6 @@
-
-
 codice;titolo;gravita;piattaforme;verificata_in_lab
 R01;Firma SMB non obbligatoria;Media;Windows;no
-R02;SMBv1 attivo;Critica;Windows, Linux;no
+R02;SMBv1 attivo;Critica;Windows, Linux;si
 R03;LLMNR attivo;Alta;Windows;no
 R04;NetBIOS Name Service attivo;Alta;Windows;no
 R05;WPAD / rilevamento automatico proxy attivo;Alta;Windows, Browser;no
@@ -11,9 +9,7 @@ R07;RDP esposto senza NLA;Alta;Windows;no
 R08;Telnet attivo;Critica;Linux, Rete, Windows;si
 R09;SSH con algoritmi deboli (CBC, SHA-1, diffie-hellman-group1);Media;Linux, Rete;no
 R10;SSH con login root e password abilitati;Alta;Linux;no
-
-+  R11;SNMP v1/v2c con community predefinite (public, private);Alta;Rete, Linux, Windows;si
-
+R11;SNMP v1/v2c con community predefinite (public, private);Alta;Rete, Linux, Windows;si
 R12;TLS 1.0 / 1.1 abilitati;Media;Web, Linux, Windows;si
 R13;Cifrari deboli (RC4, 3DES, export);Media;Web, Linux, Windows;no
 R14;Certificato scaduto o autofirmato su servizi interni;Bassa;Web, Linux, Windows;no
@@ -22,10 +18,7 @@ R16;Credenziali predefinite su interfacce di gestione;Critica;Rete, Web, Applian
 R17;Interfaccia di gestione del firewall raggiungibile da internet;Critica;Rete, Firewall;no
 R18;FTP con accesso anonimo;Media;Linux, Windows;no
 R19;Condivisione NFS esportata a tutti;Alta;Linux;no
-
-+   R20;Redis esposto senza autenticazione;Critica;Linux, Database;si
-
-
+R20;Redis esposto senza autenticazione;Critica;Linux, Database;si
 R21;Database (MySQL / PostgreSQL) in ascolto su tutte le interfacce;Alta;Linux, Windows, Database;no
 R22;DNS: trasferimento di zona (AXFR) permesso;Media;Linux, Windows, Rete;si
 R23;DNS: resolver aperto verso internet;Alta;Linux, Windows, Rete;no
@@ -36,4 +29,3 @@ R27;Account AD con preautenticazione Kerberos disattivata;Alta;Windows, Active D
 R28;Servizio Print Spooler attivo sui domain controller;Alta;Windows, Active Directory;no
 R29;SMTP open relay;Alta;Linux, Windows, Mail;no
 R30;VNC senza password o con password debole;Critica;Linux, Windows;no
-

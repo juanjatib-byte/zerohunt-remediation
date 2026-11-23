@@ -1,0 +1,33 @@
+services:
+  target-vulnerabile:
+    build: .
+    profiles: ["vulnerabile"]
+    volumes:
+      - ./vulnerabile/smb.conf:/etc/samba/smb.conf:ro
+    command: ["smbd", "--foreground", "--no-process-group", "--configfile=/etc/samba/smb.conf"]
+    networks:
+      lab-net:
+        aliases:
+          - target
+
+  target-corretto:
+    build: .
+    profiles: ["corretto"]
+    volumes:
+      - ./corretto/smb.conf:/etc/samba/smb.conf:ro
+    command: ["smbd", "--foreground", "--no-process-group", "--configfile=/etc/samba/smb.conf"]
+    networks:
+      lab-net:
+        aliases:
+          - target
+
+  attacker:
+    build: .
+    profiles: ["vulnerabile", "corretto"]
+    entrypoint: ["sleep", "infinity"]
+    networks:
+      - lab-net
+
+networks:
+  lab-net:
+    driver: bridge
