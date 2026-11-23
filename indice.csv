@@ -11,7 +11,7 @@ R09;SSH con algoritmi deboli (CBC, SHA-1, diffie-hellman-group1);Media;Linux, Re
 R10;SSH con login root e password abilitati;Alta;Linux;si
 R11;SNMP v1/v2c con community predefinite (public, private);Alta;Rete, Linux, Windows;si
 R12;TLS 1.0 / 1.1 abilitati;Media;Web, Linux, Windows;si
-R13;Cifrari deboli (RC4, 3DES, export);Media;Web, Linux, Windows;no
+R13;Cifrari deboli (RC4, 3DES, export);Media;Web, Linux, Windows;si
 R14;Certificato scaduto o autofirmato su servizi interni;Bassa;Web, Linux, Windows;no
 R15;Interfaccia di gestione in HTTP senza cifratura;Alta;Rete, Web, Appliance;no
 R16;Credenziali predefinite su interfacce di gestione;Critica;Rete, Web, Appliance;no

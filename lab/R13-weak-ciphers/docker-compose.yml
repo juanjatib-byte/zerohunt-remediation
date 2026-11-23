@@ -1,0 +1,20 @@
+services:
+  target-vulnerabile:
+    build: ./vulnerabile
+    profiles: ["vulnerabile"]
+    networks:
+      lab_net:
+        aliases: [target]
+  target-corretto:
+    build: ./corretto
+    profiles: ["corretto"]
+    networks:
+      lab_net:
+        aliases: [target]
+  attacker:
+    image: alpine:latest
+    profiles: ["vulnerabile", "corretto"]
+    command: sh -c "apk add --no-cache nmap nmap-scripts && tail -f /dev/null"
+    networks: [lab_net]
+networks:
+  lab_net:
