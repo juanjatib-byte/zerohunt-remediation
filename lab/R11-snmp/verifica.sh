@@ -1,5 +1,13 @@
 #!/bin/bash
 
+RUNNING_CONTAINERS=$(docker compose ps --services --filter "status=running" 2>/dev/null)
+
+if [ -z "$RUNNING_CONTAINERS" ]; then
+    echo "[ERROR] Nessun container attivo. Esegui prima: docker compose up -d"
+    exit 1
+fi
+
+
 echo "[*] Controllo community SNMP predefinita ('public') su target:161..."
 
 # Interroga il target con SNMPv2c e community 'public' dal container attacker

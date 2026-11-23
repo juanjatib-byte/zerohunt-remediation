@@ -1,5 +1,12 @@
 #!/bin/bash
 
+RUNNING_CONTAINERS=$(docker compose ps --services --filter "status=running" 2>/dev/null)
+
+if [ -z "$RUNNING_CONTAINERS" ]; then
+    echo "[ERROR] Nessun container attivo. Esegui prima: docker compose up -d"
+    exit 1
+fi
+
 echo "[*] Controllo trasferimento di zona DNS (AXFR) su target per zerohunt.local..."
 
 # Esegue la richiesta AXFR dal container attacker tramite dig

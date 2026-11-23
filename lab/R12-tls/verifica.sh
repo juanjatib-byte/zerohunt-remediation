@@ -1,5 +1,13 @@
 #!/bin/bash
 
+RUNNING_CONTAINERS=$(docker compose ps --services --filter "status=running" 2>/dev/null)
+
+if [ -z "$RUNNING_CONTAINERS" ]; then
+    echo "[ERROR] Nessun container attivo. Esegui prima: docker compose up -d"
+    exit 1
+fi
+
+
 echo "[*] Controllo supporto TLS 1.1 su target:443..."
 
 # Tenta una connessione forzando TLS 1.1 dal container attacker

@@ -1,5 +1,12 @@
 #!/bin/bash
 
+RUNNING_CONTAINERS=$(docker compose ps --services --filter "status=running" 2>/dev/null)
+
+if [ -z "$RUNNING_CONTAINERS" ]; then
+    echo "[ERROR] Nessun container attivo. Esegui prima: docker compose up -d"
+    exit 1
+fi
+
 echo "[*] Controllo autenticazione Redis su target:6379..."
 
 # Esegue il comando dalla rete tramite il container attacker
