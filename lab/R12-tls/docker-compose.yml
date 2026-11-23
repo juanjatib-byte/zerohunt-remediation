@@ -1,0 +1,33 @@
+services:
+  target-vulnerabile:
+    build: .
+    profiles: ["vulnerabile"]
+    volumes:
+      - ./vulnerabile/nginx.conf:/etc/nginx/nginx.conf:ro
+    command: ["nginx", "-g", "daemon off;"]
+    networks:
+      lab-net:
+        aliases:
+          - target
+
+  target-corretto:
+    build: .
+    profiles: ["corretto"]
+    volumes:
+      - ./corretto/nginx.conf:/etc/nginx/nginx.conf:ro
+    command: ["nginx", "-g", "daemon off;"]
+    networks:
+      lab-net:
+        aliases:
+          - target
+
+  attacker:
+    build: .
+    profiles: ["vulnerabile", "corretto"]
+    entrypoint: ["sleep", "infinity"]
+    networks:
+      - lab-net
+
+networks:
+  lab-net:
+    driver: bridge

@@ -1,0 +1,33 @@
+services:
+  target-vulnerabile:
+    image: redis:alpine
+    profiles: ["vulnerabile"]
+    volumes:
+      - ./vulnerabile/redis.conf:/usr/local/etc/redis/redis.conf
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    networks:
+      lab-net:
+        aliases:
+          - target
+
+  target-corretto:
+    image: redis:alpine
+    profiles: ["corretto"]
+    volumes:
+      - ./corretto/redis.conf:/usr/local/etc/redis/redis.conf
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    networks:
+      lab-net:
+        aliases:
+          - target
+
+  attacker:
+    image: redis:alpine
+    profiles: ["vulnerabile", "corretto"]
+    entrypoint: ["sleep", "infinity"]
+    networks:
+      - lab-net
+
+networks:
+  lab-net:
+    driver: bridge
