@@ -1,20 +1,12 @@
 #!/bin/bash
-
-RUNNING_CONTAINERS=$(docker compose ps --services --filter "status=running" 2>/dev/null)
-
-if [ -z "$RUNNING_CONTAINERS" ]; then
-    echo "[ERROR] Nessun container attivo. Esegui prima: docker compose up -d"
-    exit 1
-fi
-
-
-echo "[*] Controllo porta Telnet (TCP 23) su target..."
-
-# Verifica dall'attacker se la porta 23 di target accetta connessioni
-if docker compose exec -T attacker nc -zv -w 2 target 23 >/dev/null 2>&1; then
-    echo "[VULNERABILE] Il servizio Telnet (porta 23) è attivo e raggiungibile!"
-    exit 1
+RUN=$(docker compose ps --services --filter "status=running" 2>/dev/null)
+echo "$RUN" | grep -q "^target-" && echo "$RUN" | grep -q "^attacker$" || { echo "[ERROR] Container target o attacker non attivo."; exit 1; }
+echo "[*] Controllo esposizione Telnet (porta 23) su target..."
+OUT=$(docker compose exec -T attacker nc -zv -w 2 target 23 2>&1)
+if echo "$OUT" | grep -Eqi "open|succeeded"; then
+    echo "[VULNERABILE] Il servizio Telnet (porta 23) è attivo e raggiungibile!" && exit 1
+elif echo "$OUT" | grep -qi "Connection refused"; then
+    echo "[OK] Porta 23 chiusa (Telnet disabilitato). Configurazione sicura." && exit 0
 else
-    echo "[OK] Porta 23 chiusa (Telnet disabilitato). Configurazione sicura."
-    exit 0
+    echo "[ERROR] Target non raggiungibile o errore di rete: $OUT" && exit 1
 fi
