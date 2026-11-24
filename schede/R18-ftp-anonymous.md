@@ -33,6 +33,6 @@ curl -s --max-time 5 ftp://<IP_TARGET>/
 - Script automatizzati di download pubblico che si connettono senza credenziali riceveranno errore `530 Login incorrect`.
 
 ## Fonti
-* [vsftpd Official Manpage - vsftpd.conf (anonymous_enable)](https://://://security.appspot.com/vsftpd/vsftpd_conf.html)
+* [vsftpd Official Manpage - vsftpd.conf (anonymous_enable)](https://security.appspot.com/vsftpd/vsftpd_conf.html)
 * [Ubuntu Server Documentation - FTP Server (vsftpd)](https://ubuntu.com/server/docs/set-up-an-ftp-server)
 * [CIS Distribution Independent Linux Benchmark](https://www.cisecurity.org/cis-benchmarks)
