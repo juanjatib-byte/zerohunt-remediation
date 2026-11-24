@@ -40,6 +40,6 @@ showmount -e <IP_TARGET>
 - Applicazioni che scrivono file direttamente come utente `root` remoto smetteranno di avere privilegi di superutente sull'export a causa dell'attivazione di `root_squash`.
 
 ## Fonti
-* [Ubuntu Server Documentation - Network File System (NFS)](PLACEHOLDER_UBU_NFS)
-* [Linux Manpage - exports(5) (/etc/exports)](PLACEHOLDER_MAN_EXPORTS)
-* [CIS Distribution Independent Linux Benchmark](PLACEHOLDER_CIS)
+* [Ubuntu Server Documentation - Network File System (NFS)](https://ubuntu.com/server/docs/network-file-system-nfs)
+* [Linux Manpage - exports(5) (/etc/exports)](https://man7.org/linux/man-pages/man5/exports.5.html)
+* [CIS Distribution Independent Linux Benchmark](https://www.cisecurity.org/cis-benchmarks)
