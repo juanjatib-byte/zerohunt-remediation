@@ -79,5 +79,5 @@ nmap -p 3389 --script rdp-enum-encryption <IP_TARGET>
 Client RDP molto obsoleti (es. Windows XP SP2 o versioni precedenti, vecchi thin client Linux/embedded non aggiornati con `FreeRDP`/`rdesktop` datati) che non supportano il protocollo **CredSSP** non riusciranno più a collegarsi al server. Inoltre, se il client non riesce a contattare un Domain Controller per ottenere un ticket Kerberos durante la fase NLA, l'autenticazione può fallire (in tal caso viene usato NTLM come fallback se consentito).
 
 ## Fonti
-* [Microsoft Learn - Configure Network Level Authentication for Remote Desktop Services Connections](https://://://microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-allow-access)
+* [Microsoft Learn - Configure Network Level Authentication for Remote Desktop Services Connections](https://://://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-allow-access)
 * [CIS Microsoft Windows Server Benchmark - Ensure 'Require user authentication for remote connections by using Network Level Authentication' is set to 'Enabled'](https://www.cisecurity.org/cis-benchmarks)
