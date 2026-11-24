@@ -13,8 +13,8 @@ R11;SNMP v1/v2c con community predefinite (public, private);Alta;Rete, Linux, Wi
 R12;TLS 1.0 / 1.1 abilitati;Media;Web, Linux, Windows;si
 R13;Cifrari deboli (RC4, 3DES, export);Media;Web, Linux, Windows;si
 R14;Certificato scaduto o autofirmato su servizi interni;Bassa;Web, Linux, Windows;si
-R15;Interfaccia di gestione in HTTP senza cifratura;Alta;Rete, Web, Appliance;no
-R16;Credenziali predefinite su interfacce di gestione;Critica;Rete, Web, Appliance;no
+R15;Interfaccia di gestione in HTTP senza cifratura;Alta;Rete, Web, Appliance;si
+R16;Credenziali predefinite su interfacce di gestione;Critica;Rete, Web, Appliance;si
 R17;Interfaccia di gestione del firewall raggiungibile da internet;Critica;Rete, Firewall;no
 R18;FTP con accesso anonimo;Media;Linux, Windows;no
 R19;Condivisione NFS esportata a tutti;Alta;Linux;no
