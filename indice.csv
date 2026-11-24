@@ -16,7 +16,7 @@ R14;Certificato scaduto o autofirmato su servizi interni;Bassa;Web, Linux, Windo
 R15;Interfaccia di gestione in HTTP senza cifratura;Alta;Rete, Web, Appliance;si
 R16;Credenziali predefinite su interfacce di gestione;Critica;Rete, Web, Appliance;si
 R17;Interfaccia di gestione del firewall raggiungibile da internet;Critica;Rete, Firewall;si
-R18;FTP con accesso anonimo;Media;Linux, Windows;no
+R18;FTP con accesso anonimo;Media;Linux, Windows;si
 R19;Condivisione NFS esportata a tutti;Alta;Linux;no
 R20;Redis esposto senza autenticazione;Critica;Linux, Database;si
 R21;Database (MySQL / PostgreSQL) in ascolto su tutte le interfacce;Alta;Linux, Windows, Database;no
